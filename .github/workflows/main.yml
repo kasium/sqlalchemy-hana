@@ -23,6 +23,7 @@ jobs:
         run: pre-commit run --all
   ci-test:
     if: ${{ github.event_name == 'pull_request_target' }}
+    environment: testing
     strategy:
       fail-fast: false
       matrix:
