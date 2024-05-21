@@ -25,6 +25,9 @@ jobs:
     if: ${{ github.event_name == 'pull_request_target' }}
     environment: testing
     runs-on: ubuntu-latest
+    steps:
+    -   name: Log
+        run: echo 'Running tests was approved'
   ci-test:
     needs: [testing-approval]
     if: ${{ github.event_name == 'pull_request_target' }}
